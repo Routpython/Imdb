@@ -1,0 +1,42 @@
+
+{% extends 'common.html' %}
+{% load static %}
+{% block common %}
+ <table align="center" style="border-radius: 23px;border: 12px">
+{% for x,y in res.items %}
+
+    <tr><th><a href="{{ y.website }}"><img src="{{ y.poster }}" width="230" ></a></th></tr>
+    <tr><th><a href="{{ y.url }}"><font style="font-family:'High Tower Text'">{{y.title}}</font></a></th></tr>
+    <th><a href="{% url 'cast' %}"><font style="font-family:'High Tower Text'">Star Cast</font></a></th>
+    {% endfor %}
+    {%  if res1 %}
+    {% for a in res1%}
+        <tr><th><font style="font-family:'High Tower Text'">{{a.name}}</font></th>
+            <th><font style="font-family:'High Tower Text'">{{a.role}}</font></th></tr>
+    {% endfor %}
+    {% endif %}
+
+
+    {% for m,n in inc.items %}
+        <tr><th><a><img src="{{ n.url }}" width="230" ></a></th></tr>
+        <th><font style="font-family:'High Tower Text'">{{n.title}}</font></th></tr>
+        <th><font style="font-family:'High Tower Text'">{{ n.id}}</font></th></tr>
+    {% endfor %}
+    {% for p,q in a2.items %}
+        <th><font style="font-family:'High Tower Text'"><a href="{{ q.link }}">kiiu</a></font></th></tr>
+
+
+         <th><font style="font-family:'High Tower Text'"><a href="{{ w.link }}">sxcvd</a></font></th></tr>
+
+    {% endfor %}
+    {% for e,w in a3.items %}
+
+        <tr><th><a href="{{ w.link }}"><img src="{{ w.url }}" width="230" ></a></th></tr>
+        <th><font style="font-family:'High Tower Text'"><a ></a></font></th></tr>
+
+
+    {% endfor %}
+
+
+{% endblock %}
+</table>
